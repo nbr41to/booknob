@@ -13,7 +13,7 @@
 ## setup
 
 ```sh
-yarn add stripe @stripe/stripe-js magic-sdk @prisma/client @slack/web-api cookie @mantine/hooks @mantine/core @mantine/next
+yarn add stripe @stripe/stripe-js magic-sdk @prisma/client @slack/web-api cookie react-query @mantine/hooks @mantine/core @mantine/next
 yarn add -D tailwindcss postcss autoprefixer prisma
 ```
 
@@ -42,6 +42,7 @@ yarn add -D tailwindcss postcss autoprefixer prisma
 - [PlanetScale](https://planetscale.com/)
 - [Prisma](https://www.prisma.io/)
 - [Cookie](https://www.npmjs.com/package/cookie)
+- [React Query](https://react-query.tanstack.com/)
 - [Slack API](https://api.slack.com/)
 - [Node Slack SDK](https://slack.dev/node-slack-sdk/)
 - [TailwindCSS](https://tailwindcss.com/)
