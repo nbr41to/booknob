@@ -2,9 +2,13 @@
 
 本屋の Web アプリを作りながら
 
-- Stripe の決済機能
+- PlanetScale によるサーバレスデータベースのお試し
+- Magic によるパスワードレス認証のお試し
+- Stripe による決済機能の実装
 - Slack API による自動化
-- UI ライブラリ Mantine
+- UI ライブラリ Mantine のお試し
+
+を重点的に学習します。
 
 ## setup
 
