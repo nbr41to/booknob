@@ -1,0 +1,40 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity"]
+}
+
+datasource db {
+  provider             = "mysql"
+  url                  = env("DATABASE_URL")
+  referentialIntegrity = "prisma"
+}
+
+model Author {
+  id    Int    @id @default(autoincrement()) // 連番の数字を自動で割り振る
+  name  String // 著者名
+  books Book[] // 紐付けられた本
+}
+
+model Book {
+  id                Int     @id @default(autoincrement()) // 連番の数字を自動で割り振る
+  stripe_product_id String?
+  stripe_price_id   String?
+  title             String
+  description       String
+  price             Int
+  authorId          Int
+  author            Author  @relation(fields: [authorId], references: [id]) // 著者と紐付け
+}
+
+model User {
+  uid                String  @id
+  stripe_customer_id String?
+  name               String
+  email              String
+  plan               Plan    @default(FREE)
+}
+
+enum Plan {
+  FREE
+  PRO
+}
