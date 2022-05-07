@@ -1,8 +1,9 @@
 type Book = {
-  id: number;
+  id: string;
   stripe_product_id: string;
   stripe_price_id: string;
   title: string;
+  description: string;
   authorId: string;
   price: number;
 };

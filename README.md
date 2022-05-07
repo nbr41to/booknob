@@ -8,6 +8,11 @@
 
 ## setup
 
+```sh
+yarn add stripe @stripe/stripe-js magic-sdk @prisma/client @slack/web-api cookie @mantine/hooks @mantine/core @mantine/next
+yarn add -D tailwindcss postcss autoprefixer prisma
+```
+
 ## feature
 
 - 本の購入機能
@@ -26,13 +31,14 @@
 
 ## libs
 
-- Next.js
-- TypeScript
-- Stripe
-- Magic
-- PlanetScale
-- Prisma
-- Cookie
-- @slack/web-api
-- TailwindCSS
-- Mantine
+- [Next.js](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Stripe](https://stripe.com/)
+- [Magic](https://magic.link/)
+- [PlanetScale](https://planetscale.com/)
+- [Prisma](https://www.prisma.io/)
+- [Cookie](https://www.npmjs.com/package/cookie)
+- [Slack API](https://api.slack.com/)
+- [Node Slack SDK](https://slack.dev/node-slack-sdk/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [Mantine](https://mantine.dev/)
