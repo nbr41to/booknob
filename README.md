@@ -20,6 +20,7 @@ yarn add -D tailwindcss postcss autoprefixer prisma
 ## feature
 
 - 本の購入機能
+- カート機能
 - 会員機能
   - 新規登録
   - 登録後 Slack のワークスペースに自動招待
@@ -29,7 +30,7 @@ yarn add -D tailwindcss postcss autoprefixer prisma
   - サブスクリプションプランへの変更
   - 退会機能
 - 管理者ダッシュボード
-  - 商品の追加
+  - 商品の追加と編集
   - 顧客の管理
   - 売上を Slack に定期投稿
 
@@ -38,6 +39,7 @@ yarn add -D tailwindcss postcss autoprefixer prisma
 - [Next.js](https://nextjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Stripe](https://stripe.com/)
+- [Stripe API](https://stripe.com/docs/api)
 - [Magic](https://magic.link/)
 - [PlanetScale](https://planetscale.com/)
 - [Prisma](https://www.prisma.io/)
