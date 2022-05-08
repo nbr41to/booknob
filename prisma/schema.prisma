@@ -21,6 +21,7 @@ model Book {
   stripe_price_id   String?
   title             String
   description       String
+  image_url         String?
   price             Int
   authorId          Int
   author            Author  @relation(fields: [authorId], references: [id]) // 著者と紐付け
