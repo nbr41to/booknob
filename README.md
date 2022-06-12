@@ -13,8 +13,8 @@
 ## setup
 
 ```sh
-yarn add stripe @stripe/stripe-js magic-sdk @prisma/client @slack/web-api cookie react-query @mantine/hooks @mantine/core @mantine/next
-yarn add -D tailwindcss postcss autoprefixer prisma
+yarn add stripe @stripe/stripe-js magic-sdk @prisma/client @slack/web-api js-cookie react-query @mantine/hooks @mantine/core @mantine/next
+yarn add -D tailwindcss postcss autoprefixer prisma @types/js-cookie
 ```
 
 ## feature

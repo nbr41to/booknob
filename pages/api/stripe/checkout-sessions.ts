@@ -9,12 +9,9 @@ export default async function handler(
 
   if (method === 'POST') {
     try {
+      const items = JSON.parse(body).items;
       const session = await stripeCheckoutSessionsCreate({
-        line_items: [
-          {
-            ...JSON.parse(body),
-          },
-        ],
+        line_items: [...items],
         mode: 'payment',
         success_url: `${req.headers.origin}/?success=true`, // Redirect URL
         cancel_url: `${req.headers.origin}/?canceled=true`,
