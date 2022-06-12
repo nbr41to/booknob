@@ -3,18 +3,24 @@ import type { NextPage } from 'next';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useBooks } from '../src/hooks/api/useBooks';
+import { useCart } from '../src/hooks/useCart';
 
 const Home: NextPage = () => {
   const router = useRouter();
   const { data: books, isLoading } = useBooks();
+  const { addCart, totalQuantity } = useCart();
 
   const purchaseBook = async (priceId: string | null) => {
     if (!priceId) return;
     const response = await fetch('/api/stripe/checkout-sessions', {
       method: 'POST',
       body: JSON.stringify({
-        price: priceId,
-        quantity: 1,
+        items: [
+          {
+            price: priceId,
+            quantity: 1,
+          },
+        ],
       }),
     });
 
@@ -25,8 +31,11 @@ const Home: NextPage = () => {
 
   return (
     <div>
-      <header className='px-8 py-4 shadow-md'>
+      <header className='px-8 py-4 shadow-md flex justify-between'>
         <h1>Book nob</h1>
+        <Button onClick={() => router.push('/cart')}>
+          Cart ({totalQuantity})
+        </Button>
       </header>
 
       <div>
@@ -53,14 +62,24 @@ const Home: NextPage = () => {
                     />
                   </div>
                   <p className='text-sm min-h-[60px]'>{book.description}</p>
-                  <Button
-                    variant='light'
-                    color='blue'
-                    fullWidth
-                    onClick={() => purchaseBook(book.stripe_price_id)}
-                  >
-                    Buy now
-                  </Button>
+                  <div className='flex gap-2'>
+                    <Button
+                      variant='light'
+                      color='grape'
+                      fullWidth
+                      onClick={() => purchaseBook(book.stripe_price_id)}
+                    >
+                      Buy now
+                    </Button>
+                    <Button
+                      variant='light'
+                      color='blue'
+                      fullWidth
+                      onClick={() => addCart(book)}
+                    >
+                      Add a cart
+                    </Button>
+                  </div>
                 </Card>
               );
             })}
